@@ -14,7 +14,6 @@ public class PlayerMoveState : GroundedState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Enter Move State");
     }
 
     public override void Exit()
@@ -28,11 +27,11 @@ public class PlayerMoveState : GroundedState
 
         player.CheckIfShouldFlip(input.x);
 
-        if(Mathf.Abs(input.x) <= 0.1f)
+        if (Mathf.Abs(input.x) <= 0.1f)
         {
             playerStateMachine.ChangeState(player.IdleState);
         }
-        else if(isPushing == true)
+        else if (isPushing == true)
         {
             playerStateMachine.ChangeState(player.PushState);
         }
@@ -42,6 +41,6 @@ public class PlayerMoveState : GroundedState
     {
         base.PhysicsUpdate();
 
-        player.SetVelocityX(playerData.movementVelocity * input.normalized.x);
+        player.SetVelocityX(playerData.movementVelocity * input.normalized.x * Time.deltaTime);
     }
 }

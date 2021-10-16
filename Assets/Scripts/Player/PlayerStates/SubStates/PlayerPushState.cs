@@ -9,7 +9,6 @@ public class PlayerPushState : GroundedState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Enter Push State ");
     }
 
     public override void LogicUpdate()
@@ -26,6 +25,6 @@ public class PlayerPushState : GroundedState
     {
         base.PhysicsUpdate();
 
-        player.SetVelocityX(playerData.pushVelocity * input.normalized.x);
+        player.SetVelocityX(playerData.pushVelocity * input.normalized.x * Time.deltaTime);
     }
 }

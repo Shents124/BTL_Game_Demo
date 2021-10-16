@@ -13,6 +13,11 @@ public class PlayerData : ScriptableObject
     [Header("Attack State")]
     public int dame = 10;
 
+    [Header("Dash State")]
+    public float dashCoolDown = 0.5f;
+    public int dashVelocity = 10;
+    public float distanceBetweenImages = 0.1f;
+
     [Header("Push State")]
     public LayerMask whatIsPush;
     public float pushVelocity = 5f;

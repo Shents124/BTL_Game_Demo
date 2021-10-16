@@ -7,61 +7,40 @@ public class PlayerInputHandle : MonoBehaviour
     private bool dash;
     private bool attack;
 
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnMovement(InputValue value)
     {
-        MoveInput(context.ReadValue<Vector2>());
+        MoveInput(value.Get<Vector2>());
     }
-    public void OnJump(InputAction.CallbackContext context)
+    public void OnJump(InputValue value)
     {
-        JumpInput(context.action.triggered);    
+        JumpInput(value.isPressed);
     }
-    public void OnDash(InputAction.CallbackContext context)
+    public void OnDash(InputValue value)
     {
-        DashInput(context.action.triggered);
+        DashInput(value.isPressed);
     }
-    public void OnAttack(InputAction.CallbackContext context)
+    public void OnAttack(InputValue value)
     {
-        AttackInput(context.action.triggered);
-    }
-
-    public void MoveInput(Vector2 newMoveDirection)
-    {
-        move = newMoveDirection;
-        //Debug.Log(move);
+        AttackInput(value.isPressed);
     }
 
-    public void JumpInput(bool newJumpState)
-    {
-        jump = newJumpState;
-        // Debug.Log(jump);
-    }
+    public void MoveInput(Vector2 newMoveDirection) => move = newMoveDirection;
 
-    public void DashInput(bool newDashState)
-    {
-        dash = newDashState;
-    }
+    public void JumpInput(bool newJumpState) => jump = newJumpState;
 
-    public void AttackInput(bool newAttackState)
-    {
-        attack = newAttackState;
-    }
+    public void DashInput(bool newDashState) => dash = newDashState;
 
-    public Vector2 GetMove()
-    {
-        return move;
-    }
+    public void AttackInput(bool newAttackState) => attack = newAttackState;
 
-    public bool IsJumping()
-    {
-        return jump;
-    }
+    public Vector2 GetMove() => move;
 
-    public bool IsDashing()
-    {
-        return dash;
-    }
-    public bool IsAttacking()
-    {
-        return attack;
-    }
+    public bool IsJumping() => jump;
+
+    public bool IsDashing() => dash;
+
+    public bool IsAttacking() => attack;
+
+    public void SetJumpInputToFalse() => jump = false;
+    public void SetAttackInputToFalse() => attack = false;
+    public void SetDashInputToFalse() => dash = false;
 }

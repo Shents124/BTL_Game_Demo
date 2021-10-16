@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private const string Attack = "attack";
     private const string Push = "push";
     private const string Die_Escape = "die_escape";
+    private const string Dash = "dash";
     #endregion
 
     #region State Variables
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour
     public PlayerAttackState AttackState { get; private set; }
     public PlayerPushState PushState { get; private set; }
     public PlayerDie_EscapeState Die_EscapeState { get; private set; }
+    public PlayerDashState DashState { get; private set; }
     #endregion
 
     #region Components
@@ -30,7 +32,7 @@ public class Player : MonoBehaviour
     public PlayerInputHandle InputHandle { get; private set; }
     #endregion
 
-    public bool isPushing;
+
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform pushCheck;
 
@@ -51,6 +53,7 @@ public class Player : MonoBehaviour
         AttackState = new PlayerAttackState(this, StateMachine, playerData, Attack);
         PushState = new PlayerPushState(this, StateMachine, playerData, Push);
         Die_EscapeState = new PlayerDie_EscapeState(this, StateMachine, playerData, Die_Escape);
+        DashState = new PlayerDashState(this, StateMachine, playerData, Dash);
     }
 
     private void Start()
@@ -67,7 +70,6 @@ public class Player : MonoBehaviour
     {
         CurrentVelocity = PlayerRigid.velocity;
         StateMachine.CurrentState.LogicUpdate();
-        isPushing = CheckIfPush();
     }
 
     private void FixedUpdate()
@@ -120,6 +122,11 @@ public class Player : MonoBehaviour
         Vector3 _scale = transform.localScale;
         _scale.x *= -1;
         transform.localScale = _scale;
+    }
+
+    public void SetGravity(int gravityScale)
+    {
+        PlayerRigid.gravityScale = gravityScale;
     }
 
     public void Escape() => IsEscaspe = true;

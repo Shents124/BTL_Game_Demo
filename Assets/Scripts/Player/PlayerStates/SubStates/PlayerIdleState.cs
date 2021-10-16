@@ -11,7 +11,6 @@ public class PlayerIdleState : GroundedState
     {
         base.Enter();
         player.SetVelocityX(0f);
-        Debug.Log("Enter Idle State");
     }
 
     public override void LogicUpdate()

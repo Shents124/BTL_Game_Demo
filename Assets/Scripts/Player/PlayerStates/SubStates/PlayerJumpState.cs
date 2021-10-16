@@ -13,15 +13,11 @@ public class PlayerJumpState : PlayerAbilityState
         player.SetVelocityY(playerData.jumpVelocity);
         isAbilityDone = true;
         amountOfJumpsLeft--;
-        Debug.Log("Enter Jump state");
-        Debug.Log(amountOfJumpsLeft);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-       // Debug.Log(amountOfJumpsLeft);
     }
 
     public bool CanJump()

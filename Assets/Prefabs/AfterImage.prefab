@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fa089b837969843bc346ce34cf8a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeTime: 0.1
+  activeTime: 0.2
+  alphaSet: 0.8
+  alphaMutiplier: 0.85
+  player: {fileID: 0}
 --- !u!212 &-4015923980156467660
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -60,6 +63,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

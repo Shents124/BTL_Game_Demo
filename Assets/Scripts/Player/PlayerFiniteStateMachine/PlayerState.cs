@@ -29,7 +29,6 @@ public class PlayerState
         startTime = Time.time;
         player.Anim.SetBool(animBoolName, true);
         isAnimationFinished = false;
-       // Debug.Log(animBoolName);
     }
 
     public virtual void Exit()
@@ -39,7 +38,11 @@ public class PlayerState
 
     public virtual void LogicUpdate()
     {
-
+        if (player.InputHandle.IsDashing())
+        {
+            playerStateMachine.ChangeState(player.DashState);
+            player.InputHandle.SetDashInputToFalse();
+        }
     }
 
     public virtual void PhysicsUpdate()

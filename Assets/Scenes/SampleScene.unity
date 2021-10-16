@@ -1321,7 +1321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &157027210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   afterImagePrefab: {fileID: 1075357373339627992, guid: 0250f603baaa3aa48972d206e2238394,
     type: 3}
-  player: {fileID: 0}
+  player: {fileID: 1338471536}
 --- !u!4 &157027211
 Transform:
   m_ObjectHideFlags: 0
@@ -1344,7 +1344,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157027209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.7667451, y: -1.6420946, z: -0.8894286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2574,7 +2574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 954c99cd4cdbdb74a9b0bf27c2bd0346,
     type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -2634,6 +2634,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0f3f8c18-0edb-4420-8da5-1241d2ded716
     m_ActionName: Gameplay/Attack[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1338471537}
+        m_TargetAssemblyTypeName: PlayerInputHandle, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7f792e57-9307-4f25-bc0a-51616aaa8e22
+    m_ActionName: Gameplay/Dash[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -2754,7 +2770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338471530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.31, y: 1.76, z: 0}
+  m_LocalPosition: {x: 1.31, y: -2.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1657210841}
@@ -2786,7 +2802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc982737912c964fa582748b179afb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPushing: 0
   groundCheck: {fileID: 1657210841}
   pushCheck: {fileID: 1540022941}
   playerData: {fileID: 11400000, guid: 2257ebcf9aaa7dd4e91f4bb63cfa3cbd, type: 2}

@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c10319289fc344b90a91a0659d601c, type: 3}
   m_Name: Player Data
   m_EditorClassIdentifier: 
-  movementVelocity: 5.5
+  movementVelocity: 250
   jumpVelocity: 15
   amountOfJumps: 2
   dame: 10
+  dashCoolDown: 0.2
+  dashVelocity: 682
+  distanceBetweenImages: 0.4
   whatIsPush:
     serializedVersion: 2
     m_Bits: 64
-  pushVelocity: 2.5
+  pushVelocity: 115
   groundCheckRadius: 0.2
   whatIsGround:
     serializedVersion: 2
